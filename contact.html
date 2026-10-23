@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARADISE TASTE - Contact and Reservations</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Arial, sans-serif; }
+    body { background-color: #fafaf9; color: #292524; line-height: 1.6; padding-top: 85px; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 20px; }
+
+    header { position: fixed; top: 0; left: 0; right: 0; height: 75px; background-color: #7c2d12; color: #ffffff; display: flex; justify-content: space-between; align-items: center; padding: 0 5%; z-index: 1000; box-shadow: 0 4px 12px rgba(124,45,18,0.2); }
+    .brand-logo { font-size: 1.3rem; font-weight: 800; letter-spacing: 1.5px; color: #ffffff; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 10px; align-items: center; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 600; padding: 8px 14px; border-radius: 4px; color: #fed7aa; text-transform: uppercase; }
+    .nav-links a:hover, .nav-links a.active { color: #ffffff; background-color: #9a3412; }
+
+    .section-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 6px; color: #1c1917; }
+    .section-sub { color: #57534e; font-size: 0.95rem; margin-bottom: 25px; }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 30px; }
+
+    .booking-card { background: #ffffff; padding: 25px; border-radius: 10px; border: 1px solid #e7e5e4; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .booking-card h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; color: #7c2d12; }
+
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; font-size: 0.8rem; font-weight: 700; color: #44403c; margin-bottom: 5px; text-transform: uppercase; }
+    .form-control { width: 100%; padding: 10px 12px; border: 1px solid #d6d3d1; border-radius: 6px; font-size: 0.95rem; background: #fafaf9; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .btn-submit { display: inline-block; width: 100%; background: #7c2d12; color: #ffffff; padding: 12px; border: none; border-radius: 6px; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; cursor: pointer; margin-top: 10px; }
+    .btn-submit:hover { background: #9a3412; }
+
+    .map-placeholder { width: 100%; aspect-ratio: 16/9; background-color: #f5f5f4; border: 1px dashed #d6d3d1; border-radius: 8px; overflow: hidden; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; }
+    .map-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+
+    .info-card { background: #ffffff; border: 1px solid #e7e5e4; border-radius: 8px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f5f5f4; font-size: 0.92rem; }
+    .info-row:last-child { border-bottom: none; }
+    .info-label { font-weight: 700; color: #1c1917; }
+    .info-val { color: #57534e; text-align: right; }
+
+    footer { background-color: #7c2d12; color: #fed7aa; padding: 25px 5%; margin-top: 50px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; border-top: 3px solid #d97706; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand-logo">PARADISE TASTE</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1 class="section-title">Contact and reservations</h1>
+    <p class="section-sub">Book online or reach us directly. We reply within 30 minutes during opening time.</p>
+
+    <div class="grid-2">
+      <div class="booking-card">
+        <h2>Book a table</h2>
+        <form onsubmit="event.preventDefault(); alert('Reservation received! We will confirm your table shortly.');">
+          <div class="form-group">
+            <label>Full name</label>
+            <input type="text" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" class="form-control" placeholder="076 XXX XXX" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Date</label>
+              <input type="date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Time</label>
+              <input type="time" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Number of guest</label>
+            <input type="number" class="form-control" value="2" min="1" max="20" required>
+          </div>
+
+          <button type="submit" class="btn-submit">Confirm booking</button>
+        </form>
+      </div>
+
+      <div>
+        <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; color: #1c1917;">Find us</h2>
+        <div class="map-placeholder">
+          <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="Freetown Location">
+        </div>
+
+        <div class="info-card">
+          <div class="info-row"><span class="info-label">Phone and Whatsapp</span><span class="info-val">076 123 456</span></div>
+          <div class="info-row"><span class="info-label">Email</span><span class="info-val">paradisetaste.sl@gmail.com</span></div>
+          <div class="info-row"><span class="info-label">Monday to Sunday</span><span class="info-val">8am to 10pm</span></div>
+          <div class="info-row"><span class="info-label">Address</span><span class="info-val">Paradise Taste, 12 Wilkinson Road Freetown.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div><strong>PARADISE TASTE</strong> | 12 Wilkinson Road, Freetown | Phone: 076 123 456</div>
+    <div>&copy; 2026 Paradise Taste</div>
+  </footer>
+
+</body>
+</html>

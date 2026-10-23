@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>About | Paradise Taste</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* Website colours */
+        :root {
+            --brown: #7b2d12;
+            --brown-light: #9a3412;
+            --accent: #c2610f;
+            --cream: #fbe9d0;
+            --bg: #faf9f7;
+            --text: #1c1917;
+            --muted: #44403c;
+            --border: #e7e5e4;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Lato', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HEADER */
+
+        header {
+            background: var(--brown);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        }
+
+        .header-inner {
+            max-width: 1230px;
+            margin: 0 auto;
+            padding: 0 30px;
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: white;
+            font-weight: 900;
+            font-size: 22px;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 8px 14px;
+            border-radius: 6px;
+        }
+
+        nav a.active,
+        nav a:hover {
+            background: var(--brown-light);
+            color: white;
+        }
+
+        /* MAIN CONTENT */
+
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 70px;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 900;
+            margin: 45px 0 18px;
+        }
+
+        .intro {
+            max-width: 820px;
+            color: var(--muted);
+            font-size: 15.5px;
+        }
+
+        /* MAIN RESTAURANT IMAGE */
+
+        .hero-img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+            margin-top: 28px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: #e7e5e4;
+        }
+
+        /* RESTAURANT STATISTICS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.10);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--brown);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+
+        .stat-img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #e7e5e4;
+            flex-shrink: 0;
+        }
+
+        /* RESTAURANT VALUES */
+
+        .values {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .value-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px 22px;
+        }
+
+        .value-card h3 {
+            font-size: 16px;
+            font-weight: 900;
+            margin-bottom: 6px;
+        }
+
+        .value-card p {
+            font-size: 14.5px;
+            color: var(--muted);
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: var(--brown);
+            border-top: 3px solid var(--accent);
+            color: var(--cream);
+            font-size: 14px;
+        }
+
+        .footer-inner {
+            max-width: 1230px;
+            margin: 0 auto;
+            padding: 28px 30px;
+
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* MOBILE RESPONSIVE DESIGN */
+
+        @media (max-width: 800px) {
+
+            .header-inner {
+                height: auto;
+                padding: 14px 20px;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-img {
+                height: 260px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                padding: 22px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .stat-img {
+                width: 120px;
+                height: 90px;
+            }
+
+            .stat-number {
+                font-size: 27px;
+            }
+
+            nav a {
+                font-size: 12px;
+                padding: 7px 9px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- WEBSITE HEADER -->
+
+    <header>
+
+        <div class="header-inner">
+
+            <a href="index.html" class="logo">
+                PARADISE TASTE
+            </a>
+
+            <!-- Navigation links -->
+
+            <nav>
+                <a href="index.html">Home</a>
+
+                <a href="about.html" class="active">
+                    About
+                </a>
+
+                <a href="services.html">Services</a>
+
+                <a href="menu.html">Menu</a>
+
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT PAGE CONTENT -->
+
+    <main>
+
+        <h1>About Paradise Taste</h1>
+
+        <p class="intro">
+
+            Paradise Taste opened in 2024 to give people
+            in Freetown a clean and welcoming place to enjoy
+            delicious home-style cooking at affordable prices.
+
+            We prepare our meals using fresh ingredients
+            from local markets and farmers.
+
+            Our goal is to provide good food, excellent
+            customer service and a comfortable environment
+            where families and friends can enjoy their meals.
+
+        </p>
+
+
+        <!-- Main restaurant interior image -->
+
+        <img
+            class="hero-img"
+            src="image/restaurant interior.jpg.jpg"
+            alt="Inside Paradise Taste Restaurant"
+        >
+
+
+        <!-- RESTAURANT INFORMATION -->
+
+        <h2>At a Glance</h2>
+
+        <div class="stats">
+
+
+            <!-- Year Opened -->
+
+            <div class="stat-card">
+
+                <div>
+
+                    <div class="stat-number">
+                        2024
+                    </div>
+
+                    <div class="stat-label">
+                        Year Opened
+                    </div>
+
+                </div>
+
+                <img
+                    class="stat-img"
+                    src="image/restaurant entrance.jpg.jpg"
+                    alt="Restaurant Entrance"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <!-- Restaurant Seating -->
+
+            <div class="stat-card">
+
+                <div>
+
+                    <div class="stat-number">
+                        250
+                    </div>
+
+                    <div class="stat-label">
+                        Seats
+                    </div>
+
+                </div>
+
+                <img
+                    class="stat-img"
+                    src="image/tables .jpg.jpg"
+                    alt="Restaurant Tables and Seating"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <!-- Restaurant Members -->
+
+            <div class="stat-card">
+
+                <div>
+
+                    <div class="stat-number">
+                        95
+                    </div>
+
+                    <div class="stat-label">
+                        Members
+                    </div>
+
+                </div>
+
+                <img
+                    class="stat-img"
+                    src="image/people dining.jpg.jpg"
+                    alt="Customers Enjoying Their Meals"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <!-- Restaurant Menu -->
+
+            <div class="stat-card">
+
+                <div>
+
+                    <div class="stat-number">
+                        500
+                    </div>
+
+                    <div class="stat-label">
+                        Menu Items
+                    </div>
+
+                </div>
+
+                <img
+                    class="stat-img"
+                    src="image/menu pic.jpg.jpg"
+                    alt="Paradise Taste Food Menu"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- OUR VALUES -->
+
+        <h2>What We Stand For</h2>
+
+        <div class="values">
+
+
+            <!-- Fresh Food -->
+
+            <div class="value-card">
+
+                <h3>Freshness</h3>
+
+                <p>
+                    We prepare our meals fresh every day
+                    using locally sourced vegetables,
+                    meat, fish and traditional Sierra
+                    Leonean spices.
+                </p>
+
+            </div>
+
+
+            <!-- Affordable Prices -->
+
+            <div class="value-card">
+
+                <h3>Fair Prices</h3>
+
+                <p>
+                    We believe everyone deserves
+                    quality food at affordable prices.
+
+                    Our menu clearly displays the
+                    prices of our meals.
+                </p>
+
+            </div>
+
+
+            <!-- Clean Environment -->
+
+            <div class="value-card">
+
+                <h3>Hygiene</h3>
+
+                <p>
+                    Cleanliness is very important
+                    at Paradise Taste.
+
+                    Our staff follow food safety
+                    practices to maintain a clean
+                    kitchen and dining environment.
+                </p>
+
+            </div>
+
+
+            <!-- Supporting Local Farmers -->
+
+            <div class="value-card">
+
+                <h3>Local Sourcing</h3>
+
+                <p>
+                    We support local farmers and
+                    businesses by purchasing fresh
+                    vegetables, fish, rice and
+                    other ingredients from
+                    markets in Freetown.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- WEBSITE FOOTER -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <div>
+
+                <strong>PARADISE TASTE</strong>
+
+                | 12 Wilkinson Road, Freetown
+
+                | Phone: 076 123 456
+
+            </div>
+
+            <div>
+                &copy; 2026 Paradise Taste
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
